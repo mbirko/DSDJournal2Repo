@@ -2,7 +2,6 @@
 
 # files to ignore
 *.bak
-*.qsf
 *.qws
 *.temp
 
