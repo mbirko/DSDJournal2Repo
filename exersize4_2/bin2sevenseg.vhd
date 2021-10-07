@@ -11,7 +11,7 @@ entity bin2sevenseg is
 		bin	: in  std_logic_vector(3 downto 0);
 
 		-- Output ports
-		Sseg	: out std_logic_vector(6 downto 0)
+		sseg	: out std_logic_vector(6 downto 0)
 		
 	);
 end bin2sevenseg;
@@ -20,7 +20,7 @@ architecture bin2sevenseg_con of bin2sevenseg is
 	-- Declarations (optional)
 begin
 
-with bin select Sseg <= 
+with bin select sseg <= 
 	"1000000" when "0000", 
 	"1111001" when "0001",  
 	"0100100" when "0010", 
