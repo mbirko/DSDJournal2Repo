@@ -23,5 +23,5 @@ architecture multiplier_impl of multiplier is
 begin		
 -- Casting the two vectors to be signed and then multipling them. 
 -- Then recasting them back to a vector
-	Prod <= std_logic_vector(signed(A) * signed(B));
+	Prod <= std_logic_vector(signed(A) * 10);
 end multiplier_impl;
