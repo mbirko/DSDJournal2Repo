@@ -45,10 +45,10 @@ B2S_3: entity bin2sevenseg
 	 sseg(6 downto 0) => temp(6 downto 0)
 	);
 	
-	with sel select tsseg <= 
-		"1111111" & "1000000" & "0101011" when not "11",
-		"1000000" & "0001110" & "0001110" when not "01",		
-		temp when not "10",
-		"1111111" & "1111111" & "1111111" when others;
+	tsseg <= 
+		"1111111" & "1000000" & "0101011" when sel = "11" else
+		"1000000" & "0001110" & "0001110" when sel = "01" else		
+		temp when  sel = "10" else
+		"1111111" & "1111111" & "1111111";
 		
 end hex_mux_impl;
