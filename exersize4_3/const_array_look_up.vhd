@@ -4,29 +4,20 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 USE work.ALL;
 
-entity const_array_look_up is
-
-
-	port
-	(
+ENTITY const_array_look_up IS
+	PORT (
 		-- Input ports
-		i1 ,i2, i3	: in std_logic;
-		
-		
+		i1, i2, i3 : IN STD_LOGIC;
 		-- Output ports
-		out1	: out std_logic
-		
+		out1 : OUT STD_LOGIC
 	);
-end const_array_look_up;
+END const_array_look_up;
 
-
-
-architecture const_array_look_up_impl of const_array_look_up is
-	constant output : std_logic_vector (0 to 7) := "11010--1"; -- 11010--1 1--01011
-
-begin
-
- out1 <= output(to_integer(unsigned'(i3, i2, i1)));
- 
-
-end const_array_look_up_impl;
+ARCHITECTURE const_array_look_up_impl OF const_array_look_up IS
+	-- constant array containg output from look up table
+	CONSTANT output : STD_LOGIC_VECTOR (0 TO 7) := "11010--1";
+BEGIN
+	-- combining ' i3..i1, typing as unsigned. 
+	-- interger value is used for index to const array
+	out1 <= output(to_integer(unsigned'(i3, i2, i1)));
+END const_array_look_up_impl;
